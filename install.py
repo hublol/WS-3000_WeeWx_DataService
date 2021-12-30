@@ -4,22 +4,15 @@
 from weecfg.extension import ExtensionInstaller
 
 def loader():
-    return WS3000Installer()
+    return WS3000DSInstaller()
 
-class WS3000Installer(ExtensionInstaller):
+class WS3000DSInstaller(ExtensionInstaller):
     def __init__(self):
-        super(WS3000Installer, self).__init__(
+        super(WS3000DSInstaller, self).__init__(
             version="0.2",
-            name='WS-3000',
-            description='Weewx driver for the WS-3000 station',
+            name='WS-3000 Data Service',
+            description='Data Service for the WS-3000 station',
             author="hublol",
             author_email="hal.lol@tutanota.com",
-            config={
-                'WS3000': {
-                    'driver': 'user.ws3000',
-                    'model': 'WS3000',
-                    'timeout': '1000'
-                    }
-                },
-            files=[('bin/user', ['bin/user/ws3000.py', 'bin/user/ws3000Extensions.py'])]
+            files=[('bin/user', ['bin/user/ws3000DataService.py'])]
             )
