@@ -14,5 +14,6 @@ class WS3000DSInstaller(ExtensionInstaller):
             description='Data Service for the WS-3000 station',
             author="hublol",
             author_email="hal.lol@tutanota.com",
+            data_services='user.ws3000DataService.AddWS300Data',
             files=[('bin/user', ['bin/user/ws3000DataService.py'])]
             )
