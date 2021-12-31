@@ -13,7 +13,7 @@ and the station configured.
 
 1) Download the WS-3000 data service extension package from the Releases page:
 
-wget -O weewx-ws3000ds.tar.gz https://github.com/hublol/WS-3000_WeeWx_DataService/archive/refs/tags/weewx-ws3000ds-0.2.tar.gz
+wget -O weewx-ws3000ds.tar.gz https://github.com/hublol/ws3000-weewx-dataservice/archive/refs/tags/weewx-ws3000ds-0.2.tar.gz
 
 
 2) Install the extension:
