@@ -16,4 +16,10 @@ class PrintPacket(StdService):
 
     def new_archive_record(self, event):
 
+        wspacket = {'batteryStatus1': 0}
+        log.debug("ws3000 data:" + str(wspacket))
+        for key in wspacket.keys():
+            event.record[key] = wspacket[key]
+
+        log.debug("Dummy data service - printing archive record")
         log.debug(event.record)

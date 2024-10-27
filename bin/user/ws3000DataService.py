@@ -98,8 +98,12 @@ class AddWS300Data(StdService):
         """Function that copies data from the WS3000 packet to the weewx packet."""
         self.init_converter(wxpacket)
         wspacket = self.ws3000.get_current_values()
-        loginf("ws3000 data:" + str(wspacket))
+        # current_time = time.time() + 0.5
+        # wspacket = {'dateTime': int(current_time), 'usUnits': weewx.METRICWX, 'batteryStatus1': 0}
         converted_packet = self.converter.convertDict(wspacket)
-        # logdbg(wxpacket)
+        loginf("initial data:" + str(wxpacket))
+        loginf("ws3000 data:" + str(converted_packet))
         for key in converted_packet.keys():
+            # loginf(key)
+            if key != "dateTime": # do not update the dateTime, this  seems to mess up with the StdArchive / accumulators collecting data from previous LOOP packets
                 wxpacket[key] = converted_packet[key]
